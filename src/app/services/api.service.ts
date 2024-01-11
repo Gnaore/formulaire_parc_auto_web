@@ -9,10 +9,13 @@ export class ApiService {
     constructor(private httpClient: HttpClient) {}
 
    //**en dev mac
-   urlg = 'http://127.0.0.1:8000/api/'
-   urlimg = 'http://127.0.0.1:8000/'
-   //urlg='https://apiparcauto.serveurwebonlinerti.com/api/'
-   //*sur server distant
+   //urlg = 'http://127.0.0.1:8000/api/'
+   //urlimg = 'http://127.0.0.1:8000/'
+
+    //*sur server distant
+   urlg='https://apiparcauto.serveurwebonlinerti.com/api/'
+   urlimg = 'https://apiparcauto.serveurwebonlinerti.com/'
+  
    //urlg = 'http://10.102.0.25:3000/'; //API RTI
  
    idUser = localStorage.getItem('id');
