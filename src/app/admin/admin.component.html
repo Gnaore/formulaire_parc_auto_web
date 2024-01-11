@@ -1,0 +1,124 @@
+<nav class="navbar" style="background-color: #e3f2fd">
+    <div class="container-fluid">
+        <img src="../../assets/dist/img/Logo-Radiodiffusion-television-ivoirienne.png" alt="RTI" width="50px" />
+        <form class="d-flex" role="search">
+            <img src="../../assets/dist/img/logoParcAuto.jpeg" alt="RTI" width="50px" />
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid dark">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>DONNEES PARCAUTO</h1>
+                </div>
+                <br>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="callout callout-info">
+                        Liste des informations collectées par les agents détenteurs de véhicule
+                    </div>
+
+                    <div class="callout callout-warning">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i class="fas fa-globe" style="color: orange"></i>
+                                    Informations recueillies
+                                </h4>
+                            </div>
+                            <div class="table-responsive">
+                                <p-table [value]="formulaires" class="table table-striped table-hover"
+                                    styleClass="p-datatable-customers">
+                                    <ng-template pTemplate="header">
+
+                                        <tr>
+                                            <th>Marticule</th>
+                                            <th>Nom et Prénoms</th>
+                                            <th>Direction</th>
+                                            <th>Fonction</th>
+                                            <th>Pieces</th>
+                                            <th>Images</th>
+                                        </tr>
+
+
+                                    </ng-template>
+
+                                    <ng-template pTemplate="body" let-formulaire>
+
+                                        <tr>
+
+                                            <td>{{formulaire.matricule}}</td>
+                                            <td>{{formulaire.nomprenoms}}</td>
+                                            <td>{{formulaire.direction}}</td>
+                                            <td>{{formulaire.fonctionagent}}</td>
+                                            <td>
+                                             
+                                                <p-image src="{{urlimg+formulaire.cartegrise}}" title="Carte Grise"
+                                                    width="50" [preview]="true"></p-image>
+                                                -
+                                                <p-image src="{{urlimg+formulaire.assurance}}" title="ASSURANCE"
+                                                    width="50" [preview]="true"></p-image>
+                                                -
+                                                <p-image src="{{urlimg+formulaire.visitetechnique}}"
+                                                    title="VISITE TECHNIQUE" width="50" [preview]="true"></p-image>
+
+                                            </td>
+                                            <td>
+                                                <p-image src="{{urlimg+formulaire.faceavant}}" title="FACE AVANT"
+                                                    width="50" [preview]="true"></p-image>
+                                               -
+                                                <p-image src="{{urlimg+formulaire.facearriere}}" title="FACE ARRIERE"
+                                                width="50" [preview]="true"></p-image>
+                                                -
+                                                <p-image src="{{urlimg+formulaire.latteraldroit}}" title="LATTERAL DROIT"
+                                                width="50" [preview]="true"></p-image>
+                                              
+                                                -
+                                                <p-image src="{{urlimg+formulaire.latteralgauche}}" title="LATTERAL GAUCHE"
+                                                width="50" [preview]="true"></p-image>
+                                            </td>
+                                        </tr>
+
+                                    </ng-template>
+                                </p-table>
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+
+
+    <!-- /.content -->
+</div>
+
+<!-- jQuery -->
+<script src="../../assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../assets/assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../assets/assets/dist/js/demo.js"></script>

@@ -1,0 +1,471 @@
+<nav class="navbar" style="background-color: #e3f2fd">
+    <div class="container">
+        <img
+            src="../../assets/dist/img/Logo-Radiodiffusion-television-ivoirienne.png"
+            alt="RTI"
+            width="50px"
+        />
+        <form class="d-flex" role="search">
+            <img
+            src="../../assets/dist/img/logoParcAuto.jpeg"
+            alt="RTI"
+            width="50px"
+        />
+        </form>
+    </div>
+</nav>
+
+<div class="container dark">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Formulaire PARCAUTO</h1>
+                </div>
+               <br>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+<form  [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+      <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="callout callout-info">
+                       Collecte d'informations pour le PARCAUTO
+                    </div>
+
+                    <div class="callout callout-warning">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i
+                                        class="fas fa-globe"
+                                        style="color: orange"
+                                    ></i>
+                                    Vos Informations
+                                </h4>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <div class="row invoice-info">
+                          <input
+                          type="text"
+                          class="form-control"
+                          placeholder="id"
+                          aria-label="id"
+                          formControlName="id"
+                          hidden
+                      />
+                            <div class="col-12 invoice-col">
+                                <div class="input-group mb-3">
+                                   
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Matricule* - Obligatoire"
+                                        aria-label="Matricule"
+                                        formControlName="matricule"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-12 invoice-col">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Nom & Prénoms* - Obligatoire"
+                                        aria-label="Nom & Prénoms"
+                                        formControlName="nomprenoms"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-12 invoice-col">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Direction - Facultative"
+                                        aria-label="Direction"
+                                        formControlName="direction"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-12 invoice-col">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Fonction - Facultative"
+                                        aria-label="Fonction"
+                                        formControlName="fonctionagent"
+                                    />
+                                </div>
+                            </div>
+                           
+                       
+                        </div>
+                     </div>
+
+                    <!-- Main content -->
+                    <div class="invoice p-3 mb-3">
+                        <!-- title row -->
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i
+                                        class="fas fa-save"
+                                        style="color: blue"
+                                    ></i>
+                                    Enregistrement véhicule <a style="color: red; font-weight: bold;">*</a> <a style="color: red; font-size: xx-small;">Toutes les photos sont obligatoires</a>
+                                </h4>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- info row -->
+                      
+
+                        <!-------------------------------------->
+
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card card-solid">
+          <div class="card-body pb-0">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    CARTE GRISE
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourCarteGrise}}" alt="user-avatar" width="250px"  height="250px">
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputCarteGrise" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputCarteGrise"    
+                            (change)="onFileCarteGrise($event)" accept="image/*" hidden >
+                          <input type="text" formControlName="cartegrise" hidden>
+                        
+                            <ngx-loading
+                            [show]="loaderCartegrise"
+                            [config]="{
+                              animationType: ngxLoadingAnimationTypes.threeBounce,
+                              primaryColour: primaryColour,
+                              secondaryColour: secondaryColour,
+                              backdropBorderRadius: '3px'
+                            }"
+                          ></ngx-loading>
+                         
+             
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+
+                
+
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    ASSURANCE
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourAssurance}}" alt="user-avatar" width="250px"  height="250px">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputAssurance" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputAssurance"    
+                            (change)="onFileAssurance($event)" hidden >
+                          <input type="text" formControlName="assurance" hidden>
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+                  <ngx-loading
+
+                  [show]="loaderAssurance"
+                  [config]="{
+                    animationType: ngxLoadingAnimationTypes.threeBounce,
+                    primaryColour: primaryColour,
+                    secondaryColour: secondaryColour,
+                    backdropBorderRadius: '3px'
+                  }"
+                 
+                ></ngx-loading>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    VISITE TECHNIQUE
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourVisitetechnique}}" alt="user-avatar" width="250px"  height="250px">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputVisitetechnique" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputVisitetechnique"    
+                            (change)="onFileVisitetechnique($event)" hidden >
+                          <input type="text" formControlName="visitetechnique" hidden>
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+                  <ngx-loading
+                  [show]="loaderVisitetechnique"
+                  [config]="{
+                    animationType: ngxLoadingAnimationTypes.threeBounce,
+                    primaryColour: primaryColour,
+                    secondaryColour: secondaryColour,
+                    backdropBorderRadius: '3px'
+                  }"
+                 
+                ></ngx-loading>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    FACE AVANT
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourFaceavant}}" alt="user-avatar" width="250px"  height="250px">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputFaceavant" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputFaceavant"    
+                            (change)="onFileFaceavant($event)" hidden >
+                          <input type="text" formControlName="faceavant" hidden>
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+                  <ngx-loading
+                  [show]="loaderFaceavant"
+                  [config]="{
+                    animationType: ngxLoadingAnimationTypes.threeBounce,
+                    primaryColour: primaryColour,
+                    secondaryColour: secondaryColour,
+                    backdropBorderRadius: '3px'
+                  }"
+                 
+                ></ngx-loading>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    FACE ARRIERE
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourFacearriere}}" alt="user-avatar" width="250px"  height="250px">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputFacearriere" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputFacearriere"    
+                            (change)="onFileFacearriere($event)" hidden >
+                          <input type="text" formControlName="facearriere" hidden>
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+                  <ngx-loading
+                  [show]="loaderFacearriere"
+                  [config]="{
+                    animationType: ngxLoadingAnimationTypes.threeBounce,
+                    primaryColour: primaryColour,
+                    secondaryColour: secondaryColour,
+                    backdropBorderRadius: '3px'
+                  }"
+                 
+                ></ngx-loading>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    LATERAL GAUCHE
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourLateralgauche}}" alt="user-avatar" width="250px"  height="250px">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputLateralgauche" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputLateralgauche"    
+                            (change)="onFileLateralgauche($event)" hidden >
+                          <input type="text" formControlName="latteralgauche" hidden>
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+                  <ngx-loading
+                  [show]="loaderLateralgauche"
+                  [config]="{
+                    animationType: ngxLoadingAnimationTypes.threeBounce,
+                    primaryColour: primaryColour,
+                    secondaryColour: secondaryColour,
+                    backdropBorderRadius: '3px'
+                  }"
+                 
+                ></ngx-loading>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div class="card bg-light d-flex flex-fill">
+                  <div class="card-header  border-bottom-0" style="color: red;">
+                    LATERAL DROIT
+                    <hr>
+                  </div>
+                  <div class="card-body pt-0 Hcentrer">
+                    <div class="row ">
+                      <div class="Hcentrer">
+                        <img src="{{lienPhotoretourLateraldroit}}" alt="user-avatar" width="250px"  height="250px">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer Hcentrer">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputLateraldroit" style="color: cadetblue;">Charger la photo</label>
+                            <input type="file" class="form-control" 
+                            id="inputLateraldroit"    
+                            (change)="onFileLateraldroit($event)" hidden >
+                          <input type="text" formControlName="latteraldroit" hidden>
+                          </div>
+                          <i
+                          class="fas fa-check mt-3"
+                          style="color: green"
+                          hidden
+                      ></i>
+                  </div>
+                  <ngx-loading
+                  [show]="loaderLateraldroit"
+                  [config]="{
+                    animationType: ngxLoadingAnimationTypes.threeBounce,
+                    primaryColour: primaryColour,
+                    secondaryColour: secondaryColour,
+                    backdropBorderRadius: '3px'
+                  }"
+                 
+                ></ngx-loading>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+
+          </div>
+          <!-- /.card-footer -->
+        </div>
+        <!-- /.card -->
+  
+      </section>
+      <!-- /.content -->
+                        <!--------------------------------------->
+
+
+                        <!-- this row will not appear when printing -->
+                        <div class="row no-print">
+                            <div class="col-12">
+                         
+                                <button
+                                    type="submit"
+                                    class="btn btn-success center col-12"
+                                    [disabled]="formGroup.invalid"
+                                >
+                                    <i class="far fa-save" ></i> Valider
+                                </button>
+                       
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.invoice -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+</form>
+
+
+    <!-- /.content -->
+</div>
+
+<!-- jQuery -->
+<script src="../../assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../assets/assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../assets/assets/dist/js/demo.js"></script>
