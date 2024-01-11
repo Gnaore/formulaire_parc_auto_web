@@ -12,14 +12,19 @@ export class AdminComponent implements OnInit {
   formulaires: any;
   images: any;
   urlimg: string = this.apiServicce.urlimg+'uploads/'
+  loading: boolean = false;
+
+
 
   ngOnInit(): void {
     this.allFormulaires();
   }
 
   allFormulaires() {
+    this.loading = true
     this.apiServicce.AllFormulaire().subscribe(ret => {
       this.formulaires = ret.data
+      this.loading = false
     });
   }
 
